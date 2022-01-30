@@ -4,7 +4,7 @@ namespace MoexStocksOnline
 {
     public class DayCost
     {
-        internal DayCost(DateTime day, double? cost)
+        internal DayCost(DateTime day, decimal? cost)
         {
             Day = day;
             Cost = cost;
@@ -12,6 +12,6 @@ namespace MoexStocksOnline
 
         public DateTime Day{ get; internal set;}
 
-        public double? Cost { get; internal set;}
+        public decimal? Cost { get; internal set;}
     }
 }

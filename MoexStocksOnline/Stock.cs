@@ -7,15 +7,15 @@ namespace MoexStocksOnline
 {
     public class Stock
     {
-        internal Stock (Board board, string secid, string shortname, string secname, double? startCost, double? lastCost)
+        internal Stock (Board board, string secid, string shortname, string secname, decimal? changeCost, decimal? lastCost)
         {
             Secid = secid;
             Shortname = shortname;
             Secname = secname;
-            StartCost = startCost;
+            ChangeCost = changeCost;
             LastCost = lastCost;
 
-            if (startCost != null && lastCost != null) ChangeCost = startCost - lastCost;
+            if (changeCost != null && lastCost != null) StartCost = lastCost - changeCost;
             else ChangeCost = null;
 
             BoardStock = board;
@@ -26,9 +26,9 @@ namespace MoexStocksOnline
         public string Secid { get; internal set; }
         public string Shortname { get; internal set; }
         public string Secname { get; internal set; }
-        public double? StartCost { get; internal set; }
-        public double? LastCost { get; internal set; }
-        public double? ChangeCost { get; internal set; }
+        public decimal? StartCost { get; internal set; }
+        public decimal? LastCost { get; internal set; }
+        public decimal? ChangeCost { get; internal set; }
         public Board BoardStock { get; internal set; }
 
         #endregion
@@ -66,7 +66,7 @@ namespace MoexStocksOnline
 
                     foreach (var sec in Jhistory)
                     {
-                        DayCost dc = new DayCost((DateTime)sec[0], MyFunction.ParseDouble(sec[1].ToString()));
+                        DayCost dc = new DayCost((DateTime)sec[0], MyFunction.ParseDecimal(sec[1].ToString()));
 
                         daycost.Add(dc);
                     }

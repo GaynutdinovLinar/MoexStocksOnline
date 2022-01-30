@@ -49,10 +49,10 @@ namespace MoexStocksOnline
             else return null;
         }
 
-        internal static double? ParseDouble(string s)
+        internal static decimal? ParseDecimal(string s)
         {
-            double i;
-            if (double.TryParse(s, out i)) return i;
+            decimal i;
+            if (decimal.TryParse(s, out i)) return i;
             else return null;
         }
     }

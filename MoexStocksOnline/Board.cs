@@ -51,7 +51,7 @@ namespace MoexStocksOnline
                 int i = 0;
                 foreach (var sec in Jsecurities)
                 {
-                    Stock st = new Stock(this, sec[0].ToString(), sec[1].ToString(), sec[2].ToString(), MyFunction.ParseDouble(Jmarketdata[i][0].ToString()), MyFunction.ParseDouble(Jmarketdata[i][1].ToString()));
+                    Stock st = new Stock(this, sec[0].ToString(), sec[1].ToString(), sec[2].ToString(), MyFunction.ParseDecimal(Jmarketdata[i][0].ToString()), MyFunction.ParseDecimal(Jmarketdata[i][1].ToString()));
 
                     stocks.Add(st);
                     i++;
