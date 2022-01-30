@@ -7,15 +7,15 @@ namespace MoexStocksOnline
 {
     public class Stock
     {
-        internal Stock (Board board, string secid, string shortname, string secname, double? startCost, double? lastCost)
+        internal Stock (Board board, string secid, string shortname, string secname, double? changeCost, double? lastCost)
         {
             Secid = secid;
             Shortname = shortname;
             Secname = secname;
-            StartCost = startCost;
+            ChangeCost = changeCost;
             LastCost = lastCost;
 
-            if (startCost != null && lastCost != null) ChangeCost = startCost - lastCost;
+            if (changeCost != null && lastCost != null) StartCost = lastCost - changeCost;
             else ChangeCost = null;
 
             BoardStock = board;
