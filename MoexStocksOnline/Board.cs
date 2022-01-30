@@ -35,7 +35,7 @@ namespace MoexStocksOnline
         {
             if (IsTraded)
             {
-                string url = $"https://iss.moex.com/iss/engines/{Engine}/markets/{Market}/boards/{BoardId}/securities.json?iss.meta=off&iss.only=securities,marketdata&securities.columns=SECID,SHORTNAME,SECNAME&marketdata.columns=LAST,CHANGE";
+                string url = $"https://iss.moex.com/iss/engines/{Engine}/markets/{Market}/boards/{BoardId}/securities.json?iss.meta=off&iss.only=securities,marketdata&securities.columns=SECID,SHORTNAME,SECNAME&marketdata.columns=CHANGE,LAST";
 
                 MyFunction.CheckInternet();
 
