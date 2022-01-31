@@ -7,7 +7,7 @@ namespace MoexStocksOnline
 {
     public class Stock
     {
-        internal Stock (Board board, string secid, string shortname, string secname, decimal? changeCost, decimal? lastCost)
+        internal Stock (Board board, string secid, string shortname, string secname, double? startCost, double? lastCost)
         {
             Secid = secid;
             Shortname = shortname;
